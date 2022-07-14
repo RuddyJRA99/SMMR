@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;   
+use Illuminate\Notifications\Notifiable;
 
-class Users extends Model
+class Users extends Authenticatable
 {
     use HasFactory;
+    use Notifiable;
 
     protected $table = 'USERS';
     protected $primaryKey = 'ID';
@@ -15,7 +18,7 @@ class Users extends Model
         'DNI',
         'NAME',
         'SURNAME',
-        'MAIL',
+        'EMAIL',
         'VER_MAIL',
         'PASSWORD',
         'IMAGE_PATH',
