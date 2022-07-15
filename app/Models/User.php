@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Users extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory;
     use Notifiable;
@@ -20,7 +20,6 @@ class Users extends Authenticatable implements MustVerifyEmail
         'name',
         'surname',
         'email',
-        'email_verified_at',
         'password',
         'image_path',
         'ID_ROLE'

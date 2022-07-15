@@ -40,12 +40,12 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="DNI" class="col-md-4 col-form-label text-md-end">{{ __('DNI') }}</label>
+                            <label for="dni" class="col-md-4 col-form-label text-md-end">{{ __('dni') }}</label>
 
                             <div class="col-md-6">
-                                <input id="DNI" type="text" class="form-control @error('DNI') is-invalid @enderror" name="DNI" value="{{ old('DNI') }}" required autocomplete="name" autofocus>
+                                <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" name="dni" value="{{ old('dni') }}" required autocomplete="name" autofocus>
 
-                                @error('DNI')
+                                @error('dni')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -52,7 +52,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:255'],
-            'DNI' => ['required', 'string', 'max:15'],
+            'dni' => ['required', 'string', 'max:15'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -62,17 +62,18 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Models\User
+     * @return \App\Models\Users
      */
     protected function create(array $data)
     {
         return Users::create([
-            'NAME' => $data['name'],
-            'EMAIL' => $data['email'],
-            'SURNAME' => $data['surname'],
-            'DNI' => $data['DNI'],
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'surname' => $data['surname'],
+            'dni' => $data['dni'],
             'ID_ROLE' => 2,
-            'PASSWORD' => Hash::make($data['password']),
+            'password' => Hash::make($data['password']),
+            'image_path' => 'https://static.vecteezy.com/system/resources/thumbnails/007/046/238/small/world-earth-globes-logo-template-design-free-vector.jpg'
         ]);
     }
 }
