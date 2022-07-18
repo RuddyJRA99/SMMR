@@ -25,5 +25,9 @@ require __DIR__.'/auth.php';
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware(['auth']);
+
+Route::get('/deposit', [App\Http\Controllers\DepositController::class, 'index'])->name('deposit')->middleware(['auth']);
+
+Route::get('/account', [App\Http\Controllers\AccountController::class, 'index'])->name('account')->middleware(['auth']);
 
